@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { withUrqlClient } from "next-urql";
 import { Wrapper } from "../components/Wrapper";
-import { DealerImage } from "../components/DealerImage";
+import { WebsiteImage } from "../components/WebsiteImage";
 import h337 from "heatmap.js";
 import getData from "../functions/getData";
-import getDealer from "../functions/getDealer";
+import getWebsite from "../functions/getWebsite";
 
 interface heatmapProps {}
 const heatmapsInfo: {
@@ -17,8 +17,8 @@ const heatmapsInfo: {
 }[] = [];
 
 export const Heatmap: React.FC<heatmapProps> = () => {
-  const dealer = getDealer();
-  const [dataPoints, imageUrl] = getData(dealer);
+  const websiteTitle = getWebsite();
+  const [dataPoints, imageUrl] = getData(websiteTitle);
   useEffect(() => {
     //set type of heatmapdata to be used in the setdata function
     var heatmapdata: h337.HeatmapData<h337.DataPoint<"value", "x", "y">>;
@@ -38,7 +38,7 @@ export const Heatmap: React.FC<heatmapProps> = () => {
   return (
     <Wrapper>
       <div className={"heatmap"}>
-        <DealerImage imageUrl={imageUrl} dealership={""} />
+        <WebsiteImage imageUrl={imageUrl} websiteTitle={websiteTitle} />
         {/* Need to find a better way to generate the heatmap.
         Currently using the canvas to preload the div before the image
         comes in. */}
@@ -51,7 +51,7 @@ export const Heatmap: React.FC<heatmapProps> = () => {
             alignItems: "center",
           }}
         >
-          Dealer Website for {dealer}
+          Dealer Website for {websiteTitle}
         </div>
       </div>
     </Wrapper>
