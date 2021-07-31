@@ -1,0 +1,11 @@
+query Heatmaps {
+  heatmaps {
+    createdAt
+    updatedAt
+    xloc
+    yloc
+    value
+    subdomain
+    _id
+  }
+}

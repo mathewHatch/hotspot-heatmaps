@@ -1,0 +1,6 @@
+query Domains {
+  domains {
+    title
+    _id
+  }
+}

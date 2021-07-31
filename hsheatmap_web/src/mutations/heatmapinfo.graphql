@@ -1,0 +1,13 @@
+query HeatmapInfo($domain: String!) {
+  heatmapInfo(domain: $domain) {
+    createdAt
+    updatedAt
+    xloc
+    yloc
+    value
+    subdomain
+    domain {
+      url
+    }
+  }
+}
