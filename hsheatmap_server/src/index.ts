@@ -66,7 +66,9 @@ const main = async () => {
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
       await page.goto(req.query.url);
-      const screenshotBuffer = await page.screenshot();
+      const screenshotBuffer = await page.screenshot({
+        type: "png",
+      });
 
       if (!screenshotBuffer) {
       } else {

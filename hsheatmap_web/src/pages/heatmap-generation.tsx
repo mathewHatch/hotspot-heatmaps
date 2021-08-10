@@ -31,7 +31,6 @@ export const Heatmap: React.FC<heatmapProps> = () => {
       min: 0,
       data: dataPoints,
     };
-    console.log(heatmapdata);
     heatmapinstance.setData(heatmapdata);
   });
 

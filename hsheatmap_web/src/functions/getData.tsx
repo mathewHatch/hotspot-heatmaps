@@ -4,10 +4,10 @@ import { useHeatmapInfoQuery } from "../generated/graphql";
 
 //need to clean up function, should use interface most likely and be better at error handling
 const getData = (
-  dealer: string
+  website: string
 ): [h337.DataPoint<"value", "x", "y">[], string] => {
   const [{ data, fetching }] = useHeatmapInfoQuery({
-    variables: { domain: dealer },
+    variables: { domain: website },
   });
   var dataPoints: h337.DataPoint<"value", "x", "y">[] = [];
   var imageUrl: string = "http://localhost:1337/screenshot?url=";

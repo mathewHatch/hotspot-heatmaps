@@ -1,17 +1,13 @@
 import { Box, Image, propNames } from "@chakra-ui/react";
-import h337 from "heatmap.js";
 import React from "react";
-import getData from "../functions/getData";
-import getDealer from "../functions/getDealer";
-
-interface DealerImageProps {
+interface WebsiteImageProps {
   imageUrl: string;
-  dealership: string;
+  websiteTitle: string;
 }
 
 //need to work on creating the heatmapInstance within this function
-export class DealerImage extends React.Component<DealerImageProps> {
-  constructor(props: DealerImageProps) {
+export class WebsiteImage extends React.Component<WebsiteImageProps> {
+  constructor(props: WebsiteImageProps) {
     super(props);
     this.state = { loaded: false };
   }
@@ -35,7 +31,8 @@ export class DealerImage extends React.Component<DealerImageProps> {
   //   }
   render() {
     return (
-      <Box w={1000} h={600} className="heatmap">
+      //
+      <Box w={1280} h={720} className="heatmap">
         <Image
           src={this.props.imageUrl}
           alt=""

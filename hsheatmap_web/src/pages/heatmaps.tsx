@@ -10,15 +10,6 @@ export interface Item {
   label: string;
   value: string;
 }
-const countries = [
-  { value: "", label: "Ghana" },
-  { value: "nigeria", label: "Nigeria" },
-  { value: "kenya", label: "Kenya" },
-  { value: "southAfrica", label: "South Africa" },
-  { value: "unitedStates", label: "United States" },
-  { value: "canada", label: "Canada" },
-  { value: "germany", label: "Germany" },
-];
 
 interface heatmapsProps {}
 
@@ -48,7 +39,7 @@ export const Heatmaps: React.FC<heatmapsProps> = () => {
       setSelectedItems(selectedItems);
       router.push({
         pathname: "/heatmap-generation",
-        query: { dealer: selectedItems[0].label },
+        query: { website: selectedItems[0].label },
       });
     }
   };
